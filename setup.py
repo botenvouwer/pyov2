@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyov2",
-    version="0.0.3",
+    version="1.0.0",
     author="William Loosman",
     author_email="william.wl@live.nl",
     description="Python module used to generate ov2 poi (point of interest) files",
