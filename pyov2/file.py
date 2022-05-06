@@ -1,8 +1,9 @@
 import csv
 import struct
-import ov2
 
 # Dialect used in the netherlands, so yeah I use this as default
+from pyov2 import ov2
+
 csv.register_dialect('semicolon', delimiter=';')
 
 
@@ -50,7 +51,7 @@ def list_to_ov2(ov2_list, ov2_path):
 
         Parameters
         ----------
-        ov2_list : str
+        ov2_list : list
             List with poi tuples.
             Tuple should have this structure: (longitude, latitude, label, status)
         ov2_path : str

@@ -19,4 +19,20 @@ And it can convert csv, write and read ov2 files.
 
 ### Write list to ov2
 
-    import 
+    from pyov2.file import list_to_ov2
+    
+    poi_list = [
+        (5.77674, 51.65315, 'Moms house'),
+        (5.77643, 51.65312, 'My house'),
+        (5.77623, 51.65313, 'Mats house')
+    ]
+    
+    list_to_ov2(poi_list, 'houses.ov2')
+
+### Convert csv to ov2
+
+    from pyov2.file import ov2_to_csv
+
+    csv_path = "houses.csv"
+    ov2_path = "houses.ov2"
+    csv_to_ov2(csv_path, ov2_path)
