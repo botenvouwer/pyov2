@@ -37,7 +37,7 @@ def serialize(lon, lat, label, status=STATUS_REGULAR):
     size = 14 + len(label)
     lon = int(lon * 100000)
     lat = int(lat * 100000)
-    label = label.encode('utf8')
+    label = label.encode('raw_unicode_escape')
     buff = struct.pack(f'<B3i{len(label) + 1}s', status, size, lon, lat, label)
     return buff
 
@@ -65,5 +65,5 @@ def deserialize(buff):
     status, size, lon, lat, label = struct.unpack(f'<B3i{len(buff) - 14}sx', buff)
     lon /= 100000
     lat /= 100000
-    label = label.decode()
+    label = label.decode('raw_unicode_escape')
     return lon, lat, label, status
